@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+
+            <div style="margin-left:500px; margin-top:50px" class="form-group">
+                <h3><font color="white" style="font-family:herculanum">Upload File 1</font></h3>
+                <font color="white" style="font-family:herculanum"><input type="file" class="form-control-file" name="file1"/></font>
+            </div>
+
+            <div style="margin-left:500px; margin-top:30px" class="form-group">
+                <h3><font color="white" style="font-family:herculanum">Upload File 2</font></h3>
+                <font color="white" style="font-family:herculanum"><input type="file" class="form-control-file" name="file2"/></font>
+            </div>
+
+            <div style="margin-left:500px; margin-top:30px" class="form-group">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="algorithm" value="lines"/>
+                        <h5><font color="white" style="font-family:herculanum">Compare lines</font></h5>
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="algorithm" value="sentences"/>
+                        <h5><font color="white" style="font-family:herculanum">Compare sentences</font></h5>
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="algorithm" value="substrings"/>
+                        <h5><font color="white" style="font-family:herculanum">Compare substrings</font></h5>
+                        <input type="number" class="form-control" min="1" name="length" placeholder="of length n"/>
+                    </label>
+                </div>
+            </div>
+            <button style="margin-left:500px" type="submit" class="btn btn-primary">Compare</button>
+        </form>
+    </div>
+
+{% endblock %}

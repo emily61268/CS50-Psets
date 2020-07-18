@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        Create a username:<div class="form-group"><input class="form-control" name="username" placeholder="Username" type="text"/></div>
+        Create password:<div class="form-group"><input class="form-control" name="password" placeholder="Password" type="password"/></div>
+        <p class="form-text text-muted">Your password must contain at least 8 characters.</p>
+        <p class="form-text text-muted">Your password must contain at least 1 upper case letter.</p>
+        <p class="form-text text-muted">Your password must contain at least 1 lowper case letter.</p>
+        <p class="form-text text-muted">Your password must contain at least 1 digit.</p>
+        Please type in your password again:
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirm password" type="password"/>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Sign up</button>
+    </form>
+{% endblock %}
